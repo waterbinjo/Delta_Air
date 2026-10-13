@@ -6,6 +6,8 @@
     left: center;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.301);
+    transition: all 0.5s;
 }
 #banner_bg {
     padding-top: 63px;
@@ -23,6 +25,61 @@
     width: 1200px;
     margin: 0 auto;
 }
+
+/* 모바일 카테고리 메뉴 시작 */
+#mNav {
+    display: none;
+}
+#mNav button {
+    padding: 15px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    /* 포지션을 왼쪽0, 오른쪽0에 고정하겠다 */
+    z-index: 2000;
+}
+#mNav button i.fa-bars {
+    color: #fff;
+    font-size: 30px;
+}
+#mNav nav {
+    position: fixed;
+    left: 0;
+    top: 63px;
+    z-index: 999;
+
+    background: rgba(0, 153, 255, 0.925);
+    width: 30%;
+    
+    box-sizing: border-box;
+
+    transform: translateX(-100%);
+    /* width: 40%이니까 -100%을 하면 #mNav이 전부 왼쪽으로 이동 */
+    transition: transform 0.3s cubic-bezier(0.91, 0.09, 0.1, 1.93);
+}
+#mNav nav.show {
+    transform: translateX(0);
+}
+#mNav nav ul {
+    padding: 10%;
+    border-bottom: 1px solid #000;
+}
+#mNav nav ul:last-child {
+    border: 0;
+}
+#mNav nav ul li {
+    margin-bottom: 10px;
+}
+#mNav nav ul li a {
+    color: #fff;
+    font-weight: 500;
+    margin-right: 15px;
+}
+#mNav nav ul li a:hover {
+    color: #0b003a;
+    font-weight: 900;
+}
+/* 모바일 카테고리 메뉴 끝 */
 
 /* header */
 .header_inner {
@@ -107,6 +164,21 @@
     background-color: #750202;
     color: #fff;
 }
+
+/* #header 스크롤 다운 */
+#header.active {
+    background-color: rgba(0, 25, 50, 0.7);
+    backdrop-filter: blur(10px);
+}
+/* #header.active .nav ul.gnb li a {
+    color: #00095c;
+}
+#header.active .nav ul.lnb li a {
+    color: yellow;
+}
+#header.active .logo svg path {
+    fill: #00095c;
+} */
 
 /* banner*/
 #banner {
@@ -302,6 +374,8 @@ margin-bottom: 10px;
 }
 .firstMenu {
     color: #a8a8a8;
+    cursor: pointer;
+    /* 커서 포인트 등장 */
 }
 .firstMenu .fa-angle-down {
         display: none;
