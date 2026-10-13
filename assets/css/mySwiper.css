@@ -1,0 +1,18 @@
+.hero .swiper-button-next,
+.hero .swiper-button-prev {
+    color: #750202;
+}
+.hero .swiper-pagination-bullet {
+    background: #fff;
+}
+.hero .swiper-pagination-bullet-active {
+    background: #750202;
+}
+
+@media (max-width: 768px) {
+    .hero .swiper-button-next,
+    .hero .swiper-button-prev,
+    .hero .swiper-pagination-bullet {
+        display: none;
+    }
+}
