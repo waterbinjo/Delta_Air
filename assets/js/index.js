@@ -6,8 +6,17 @@
 
             if(scrollTop > 100) {
                 $("#header").addClass("active")
-            } else {
+            }
+            else {
                 $("#header").removeClass("active")
+            }
+
+            // top 버튼
+            if(scrollTop >= 700) {
+                $(".top").addClass("active")
+            }
+            else {
+                $(".top").removeClass("active")
             }
         });
 
@@ -27,8 +36,7 @@
             $(this).next(".footer_dropdown").slideToggle(300);
         });
 
-
-    // #클릭 했을 때 최상단으로 가는 거 막아줌
+    // # 클릭 했을 때 최상단으로 가는 거 막아줌
         $("#mNav nav ul li a").click(function (e) {
             e.preventDefault();
         });
